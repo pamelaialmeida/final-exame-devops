@@ -1,28 +1,28 @@
 const { Builder, Browser, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const { describe, it } = require('mocha');
+const { describe, it, before, beforeEach, after, afterEach } = require('mocha');
 const { expect } = require('chai');
 const { faker } = require('@faker-js/faker');
 const utils = require('./utils.js');
 
 describe("Kelowna trails tests", function() {
     let baseUrl; 
-    switch(process.env.ENV) { 
-	case 'test': 
-		baseUrl = `http://${process.env.TEST_URL}`; 
-		break; 
-	case 'staging': 
-		baseUrl = `http://${process.env.STAGING_URL}`; 
-		break; 
-	case 'production1': 
-		baseUrl = `http://${process.env.PROD1_URL}`; 
-		break; 
-	case 'production2': 
-		baseUrl = `http://${process.env.PROD2_URL}`; 
-		break; 
-	default: 
-		throw new Error('Invalid environment specified'); 
-     }
+    switch (process.env.ENV) {
+        case 'test':
+            baseUrl = `http://${process.env.TESTING_ENV_IP}`;
+            break;
+        case 'staging':
+            baseUrl = `http://${process.env.STAGING_ENV_IP}`;
+            break;
+        case 'production1':
+            baseUrl = `http://${process.env.PROD1_ENV_IP}`;
+            break;
+        case 'production2':
+            baseUrl = `http://${process.env.PROD2_ENV_IP}`;
+            break;
+        default:
+            throw new Error('Invalid environment specified');
+    }
     
     this.timeout(10000);
 
