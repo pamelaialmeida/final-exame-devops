@@ -33,6 +33,7 @@ describe("Kelowna trails tests", function() {
 	chromeOptions.addArguments('headless');
 	chromeOptions.addArguments('disable-gpu');
 	chromeOptions.addArguments('no-sandbox');
+	chromeOptions.addArguments('disable-dev-shm-usage');
 
         driver = await new Builder().forBrowser("chrome").setChromeOptions(chromeOptions).build();
     });
