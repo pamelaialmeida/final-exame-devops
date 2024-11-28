@@ -9,16 +9,16 @@ describe("Kelowna trails tests", function() {
     let baseUrl; 
     switch(process.env.ENV) {
         case 'test':
-            baseUrl = process.env.TESTING_ENV_IP; 
+            baseUrl = `http://${process.env.TEST_URL}`; 
             break;
         case 'staging': 
-            baseUrl = process.env.STAGING_ENV_IP; 
+            baseUrl = `http://${process.env.STAGING_URL}`; 
             break; 
         case 'production1': 
-            baseUrl = process.env.PROD1_ENV_IP; 
+            baseUrl = `http://${process.env.PROD1_URL}`; 
             break; 
 	case 'production2': 
-            baseUrl = process.env.PROD2_ENV_IP; 
+            baseUrl = `http://${process.env.PROD2_URL}`; 
             break;
         default: 
             throw new Error('Invalid environment specified');
