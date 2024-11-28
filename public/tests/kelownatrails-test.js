@@ -6,7 +6,7 @@ const { faker } = require('@faker-js/faker');
 const utils = require('./utils.js');
 
 describe("Kelowna trails tests", function() {
-    /*let baseUrl; 
+    let baseUrl; 
     switch(process.env.ENV) {
         case 'test':
             baseUrl = process.env.TEST_URL; 
@@ -19,7 +19,7 @@ describe("Kelowna trails tests", function() {
             break; 
         default: 
             throw new Error('Invalid environment specified');
-    }*/
+    }
     
     this.timeout(10000);
 
@@ -35,7 +35,7 @@ describe("Kelowna trails tests", function() {
     });
 
     beforeEach(async function () {
-      await driver.get("https://kelownatrails-test.web.app/"); 
+      await driver.get(baseUrl); 
       await driver.manage().window().maximize();
     });
 
