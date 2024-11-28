@@ -23,6 +23,8 @@ describe("Kelowna trails tests", function() {
         default: 
             throw new Error('Invalid environment specified');
     }
+
+    console.log(`Base URL is set to: ${baseUrl}`);
     
     this.timeout(10000);
 
