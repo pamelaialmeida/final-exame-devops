@@ -7,6 +7,7 @@ const utils = require('./utils.js');
 
 describe("Kelowna trails tests", function() {
     let baseUrl; 
+/*
     switch (process.env.ENV) {
         case 'test':
             baseUrl = `http://${process.env.TESTING_ENV_IP}`;
@@ -22,7 +23,7 @@ describe("Kelowna trails tests", function() {
             break;
         default:
             throw new Error('Invalid environment specified');
-    }
+    }*/
     
     this.timeout(10000);
 
@@ -39,7 +40,8 @@ describe("Kelowna trails tests", function() {
     });
 
     beforeEach(async function () {
-      await driver.get(baseUrl); 
+    //  await driver.get(baseUrl); 
+      await driver.get('http://44.211.186.180');
       await driver.manage().window().maximize();
     });
 
